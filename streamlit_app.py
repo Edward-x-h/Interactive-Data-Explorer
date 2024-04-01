@@ -19,7 +19,8 @@ st.subheader('Which Movie Genre performs ($) best at the office?')
 
 # Load data
 cleaned_data = process_data('test.csv')
-df = pd.read_csv(cleaned_data)
+cleaned_data.to_csv('cleaned_data.csv', index=False)
+df = pd.read_csv('cleaned_data.csv')
 
 # Input widgets
 ## Genres selection
