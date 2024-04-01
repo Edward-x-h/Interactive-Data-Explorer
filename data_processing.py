@@ -13,8 +13,8 @@ def process_data(csv_file):
     # 提取测试结果数据
     test_data = df.iloc[49:].reset_index(drop=True)
 
-    # 构建新的 DataFrame
-    new_df = pd.DataFrame()
+    # 创建新的 DataFrame 时指定索引
+    new_df = pd.DataFrame(index=range(len(test_data)))
 
     # 添加设备名称列
     for i, name in enumerate(device_names):
