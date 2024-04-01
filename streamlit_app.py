@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import altair as alt
+from data_processing import process_data
+
 
 # Page title
 st.set_page_config(page_title='Interactive Data Explorer', page_icon='📊')
@@ -16,8 +18,8 @@ with st.expander('About this app'):
 st.subheader('Which Movie Genre performs ($) best at the office?')
 
 # Load data
-df = pd.read_csv('data/movies_genres_summary.csv')
-df.year = df.year.astype('int')
+cleaned_data = process_data('test.csv')
+df = pd.read_csv(cleaned_data)
 
 # Input widgets
 ## Genres selection
