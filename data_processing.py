@@ -7,9 +7,6 @@ def process_data(csv_file):
     # 提取设备名称
     device_names = df.iloc[1].tolist()
 
-    # 提取测试开始时间
-    start_times = df.iloc[4].tolist()
-
     # 提取测试间隔时间
     interval_times = df.iloc[5].tolist()
 
@@ -22,9 +19,6 @@ def process_data(csv_file):
     # 添加设备名称列
     for i, name in enumerate(device_names):
         new_df[name] = test_data.iloc[:, i]
-
-    # 添加测试开始时间列
-    new_df['Start Time'] = start_times
 
     # 添加测试间隔时间列
     new_df['Interval Time'] = interval_times
