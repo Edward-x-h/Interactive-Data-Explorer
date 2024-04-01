@@ -18,7 +18,7 @@ with st.expander('About this app'):
 st.subheader('Which Movie Genre performs ($) best at the office?')
 
 # Load data
-cleaned_data = process_data('test1.csv')
+cleaned_data = process_data('data/test1.csv')
 cleaned_data.to_csv('cleaned_data.csv', index=False)
 df = pd.read_csv('cleaned_data.csv')
 
